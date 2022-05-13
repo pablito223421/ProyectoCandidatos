@@ -1,0 +1,25 @@
+.titulo_candi{
+    font-family: new times roman;
+    font-size: 36px;
+    align-items:center;
+    color:mediumblue;
+}
+
+#texto {
+    font-family:sans-serif;
+    color:rgb(6, 8, 8);
+    font: size 10px;
+    text-align: center;
+}
+
+body{
+    background-image: url("https://img.freepik.com/vector-gratis/agencia-contratacion-candidatos-oficina-empleo-headhunting-contratacion-ilustracion-plana-dibujos-animados_80590-10210.jpg");   
+}
+
+
+.tit_vacante{
+    color:red;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 28px;
+    align-items: center;
+}

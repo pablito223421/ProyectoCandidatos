@@ -34,50 +34,71 @@ if( isset($_POST['submit_data']) ){
 <html>
 <head>
     <title>Registro de Candidatos</title>
-    <script>
-var form = document.getElementById("form-id-subir");
-document.getElementById("descargarA").addEventListener("click", function () {
-  form.submit();
-});
-</script>
+    <link  rel="stylesheet" href="../css/candidato.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
-    <div style="width: 500px; margin: 20px auto;">
-        <div><?php echo $message;?></div>
-        <table width="100%" cellpadding="5" cellspacing="1" border="1">
+<p class="tit_vacante" align="center"> Registro de Candidatos</p>
+    <div style=" margin: 20px 100px;">
+     
+        <table class="table table-sm table-info">
             <form action="RegistrarCandidatos.php" method="post">
-            <tr>
-                <td>Nombre del candidato:</td>
-                <td><input name="nombre" type="text"></td>
+            <tr id="texto">
+                <td scope="col">Nombre del candidato</td>
+                <td scope="col"><input name="nombre" type="text"></td>
             </tr>
-            <tr>
-                <td>Fecha de Nacimiento:</td>
-                <td><input name="fecha_nacimiento" type="date"></td>
+            <tr id="texto">
+                <td scope="col">Fecha de Nacimiento</td>
+                <td scope="col"><input name="fecha_nacimiento" type="date"></td>
             </tr>
-			<tr>
-                <td>Nacionalidad:</td>
-                <td><input name="nacionalidad" type="text"></td>
+			<tr id="texto">
+                <td scope="col">Nacionalidad</td>
+                <td scope="col"><input name="nacionalidad" type="text"></td>
             </tr>
-            <tr>
-                <td>Ciudad de Residencia:</td>
-                <td><input name="ciudad_residencia" type="text"></td>
+            <tr id="texto">
+                <td scope="col">Ciudad de Residencia</td>
+                <td scope="col"><input name="ciudad_residencia" type="text"></td>
             </tr>
-			<tr>
-                <td>Curriculum Vitae:</td>
-                <td>
-                Selecciona el fichero a importar:<br />
-<input size='50' type='file' name='cv_file'><br />
-  <input type="hidden" name="subir" value="admin1">
-  <br />
+			<tr id="texto">
+                <td scope="col">Curriculum Vitae</td>
+                <td scope="col">
+                <input id="inputFile" name="cv_file" type="file">
 </td>
             </tr>
-			<tr>
-                <td>Atributos:</td>
-                <td><input name=" more_attributes" type="text"></td>
+			<tr id="texto">
+                <td scope="col">Atributos</td>
+                <td scope="col"><input name="more_attributes" type="text"></td>
             </tr>
-            <tr>
-                <td><a href="./index.php">Lista de candidatos</a></td>
-                <td><input name="submit_data" type="submit" value="Agregar Candidato"></td>
+            <tr id="texto">
+                <td scope="col"><a class="btn btn-secondary btn-lg active" href="./index.php">Lista de candidatos</a></td>
+                <td scope="col"><button class="btn btn-warning" name="submit_data" id="btnEnviar" type="submit" >Agregar Candidato
+                <script>
+        const btnEnviar = document.querySelector("#btnEnviar");
+        const inputFile = document.querySelector("#inputFile");
+        btnEnviar.addEventListener("click", () => {
+            if (inputFile.files.length > 0) {
+                let formData = new FormData();
+                formData.append("archivo", inputFile.files[0]); 
+                fetch("importar_csv.php", {
+                    method: 'POST',
+                    body: formData,
+                })
+                    .then(respuesta => respuesta.text())
+                    .then(decodificado => {
+                        console.log(decodificado);
+                    });
+            } else {
+                
+                alert("Selecciona un archivo");
+            }
+        });
+    </script>
+    </button>
+            </td>
             </tr>
             </form>
         </table>

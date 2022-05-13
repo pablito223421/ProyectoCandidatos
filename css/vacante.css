@@ -14,3 +14,30 @@
 .btn { 
     margin-bottom:10px; 
 }
+
+.titulo_vac{
+    font-family: new times roman;
+    font-size: 36px;
+    align-items:center;
+    color:mediumblue;
+}
+
+#texto {
+    font-family:sans-serif;
+    color:mediumblue;
+    font: size 10px;
+    text-align: center;
+}
+
+body {
+    background-image: url("https://www.occ.com.mx/blog/wp-content/uploads/2018/08/redaccion-de-vacantes-OCCMundial.jpg");
+  }
+
+  .btn btn-labeled btn-warning {
+    color:white;
+}
+
+table  td {
+vertical-align:top;
+ position: relative;
+}
