@@ -2,7 +2,7 @@
 
 $message = ""; 
 
-include '../conn.php';
+include './conn.php';
 
 if( isset($_POST['submit_data']) ){
 
@@ -30,7 +30,7 @@ if( isset($_POST['submit_data']) ){
     }
 }
 
-$id = $_GET['id']; 
+$id= $_GET['id']; 
 $query = "SELECT id, * FROM vacante WHERE id=$id";
 $result = $db->query($query);
 $data = $result->fetchArray(); 

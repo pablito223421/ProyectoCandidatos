@@ -1,5 +1,5 @@
 <?php
-include "../conn.php";
+include '../conn.php';
 $id = $_GET['id']; 
 $query = "DELETE FROM vacante WHERE rowid=$id";
 

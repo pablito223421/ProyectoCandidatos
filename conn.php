@@ -1,6 +1,6 @@
 <?php
 
-$database_name = "base.db";
+$database_name = 'C:\xampp\htdocs\proyectocandidatura\base.db';
 
 $db = new SQLite3($database_name);
 

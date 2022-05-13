@@ -21,7 +21,7 @@ if( isset($_POST['submit_data']) ){
 
     }else{
 
-        $message = "Los datos no se han agragado";
+        $message = "Los datos no se han agregado";
 
     }
 
