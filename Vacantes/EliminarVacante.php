@@ -8,7 +8,6 @@ if( $db->query($query) ){
 }else {
     $message = "La vacante no existe o ya había sido eliminada";
 }
-
 echo $message;
 ?>
 <a href="index.php">Regresar a la lista de Vacantes</a>

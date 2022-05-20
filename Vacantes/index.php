@@ -1,5 +1,4 @@
 <?php
-
 include '../conn.php';
 $query = "SELECT * FROM vacante";
 $result = $db->query($query);
@@ -13,7 +12,7 @@ $result = $db->query($query);
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <title>Lista de Vacantes</title>
 </head>
 <body>
@@ -21,7 +20,6 @@ $result = $db->query($query);
     <div style=" margin: 20px 100px;">
             <table class="table">
             <tr class="table-info" id="texto">
-			    <td scope="col" >Número de la vacante</td>
                 <td scope="col">Nombre</td>
                 <td scope="col">Descripción</td>
 				<td scope="col">Habilidades técnicas requeridas</td>
@@ -30,10 +28,9 @@ $result = $db->query($query);
 				<td scope="col">Tiempo de Experiencia</td>
 				<td scope="col">Estatus</td>
                 <td scope="col">Acciones</td>
-            </tr>
+                </tr>
             <?php while($row = $result->fetchArray()) {?>
-            <tr class="table-info" id="texto">
-			    <td scope="col"><?php echo $row['id'];?></td>
+            <tr class="table-info" id="load-table">
                 <td scope="col"><?php echo $row['nombrevac'];?></td>
                 <td scope="col"><?php echo $row['descripcion'];?></td>
 				<td scope="col"><?php echo $row['habtecreq'];?></td>
@@ -42,9 +39,9 @@ $result = $db->query($query);
 				<td scope="col"><?php echo $row['experiencia'];?></td>
                 <td scope="col"><?php echo $row['estatus'];?></td>
                 <td>
-                    <a class="btn btn-secondary" href="EditarVacante.php?id=<?php echo $row['id'];?>">Editar Vacante</a> 
-                    <a class="btn btn-danger" href="EliminarVacante.php?id=<?php echo $row['id'];?>"  confirm('Desea eliminar esta vacante');">Eliminar Vacante</a>
-                </td>
+                    <a class="btn btn-secondary" href="ActualizarVacante.php?id=<?php echo $row['id'];?>">Editar Vacante</a> 
+                    <a class="btn btn-danger" id='btnEliminar' class='delete-btn' href="EliminarVacante.php?id=<?php echo $row['id'];?>"  confirm('Desea eliminar esta vacante');">Eliminar Vacante</a>
+                    </td>
             </tr>
             <?php } ?>
         </table>

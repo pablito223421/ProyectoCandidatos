@@ -1,5 +1,4 @@
 <?php
-
 $message = '';
 
 if( isset($_POST['submit_data']) ){
@@ -18,15 +17,10 @@ if( isset($_POST['submit_data']) ){
     if( $db->exec($query) ){
 
         $message = "Los datos de la vacante se han agregado correctamente";
-
     }else{
-
         $message = "Los datos no se han agregado";
-
     }
-
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -34,49 +28,47 @@ if( isset($_POST['submit_data']) ){
 <head>
     <title>Agregar Vacante</title>
     <link  rel="stylesheet" href="../css/vacante.css">
+    
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
 </head>
 <body>
 <h1 class="titulo_vac" align="center">Agregar Vacantes disponibles</h1>
     <div style="margin: 20px 100px;">
-        <div><?php echo $message;?></div>
         <table class="table">
-            <form action="AgregarVacante.php" method="post">
+            <form action="AgregarVacante.php"  method="post">
             <tr class="table-info" id="texto">
                 <td>Nombre de la Vacante</td>
-                <td><input name="nombrevac" type="text"></td>
+                <td><input name="nombrevac" id="nombrevac" type="text"></td>
             </tr>
             <tr class="table-info" id="texto">
                 <td>Descripción</td>
-                <td><input name="descripcion" type="text"></td>
+                <td><input name="descripcion" id="descripcion" type="text"></td>
             </tr>
 			<tr class="table-info" id="texto">
                 <td>Habilidades técnicas requeridas</td>
-                <td><input name="habtecreq" type="text"></td>
+                <td><input name="habtecreq" id="habtecreq"  type="text"></td>
             </tr class="table-info" id="texto">
             <tr class="table-info" id="texto">
                 <td>Habilidades técnicas deseables</td>
-                <td><input name="habtecdes" type="text"></td>
+                <td><input name="habtecdes" id="habtecdes" type="text"></td>
             </tr>
 			<tr class="table-info" id="texto">
                 <td>Escolaridad</td>
-                <td><input name="escolaridad" type="text"></td>
+                <td><input name="escolaridad" id="escolaridad" type="text"></td>
             </tr>
 			<tr class="table-info" id="texto">
                 <td>Tiempo de Experiencia</td>
-                <td><input name=" experiencia" type="text"></td>
+                <td><input name="experiencia" id="experiencia"  type="text"></td>
             </tr>
             <tr class="table-info" id="texto">
                 <td>Estatus</td>
-                <td><input name="estatus" type="text"></td>
+                <td><input name="estatus" id="estatus"  type="text"></td>
             </tr>
-            <tr class="table-info" id="texto">
                 <td><a href="index.php"><button type="button" class="btn btn-success">Lista de Vacante</button></a></td>
-                <td><input name="submit_data" class="btn btn-info" type="submit" value="Agregar Vacante"></td>
+                <td><input name="submit_data" class="btn btn-info" id="btnGuardarVacante" type="submit" value="Agregar"></td>
             </tr>
             </form>
         </table>
