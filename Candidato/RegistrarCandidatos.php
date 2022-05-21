@@ -35,6 +35,7 @@ if( isset($_POST['submit_data']) ){
 <head>
     <title>Registro de Candidatos</title>
     <link  rel="stylesheet" href="../css/candidato.css">
+    <script src="../js/JSVacantes/script2.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -75,7 +76,7 @@ if( isset($_POST['submit_data']) ){
             </tr>
             <tr id="texto">
                 <td scope="col"><a class="btn btn-secondary btn-lg active" href="./index.php">Lista de candidatos</a></td>
-                <td scope="col"><button class="btn btn-warning" name="submit_data" id="btnEnviar" type="submit" >Agregar Candidato
+                <td scope="col"><button class="btn btn-warning" name="submit_data" onclick="GuardarCandidato();" id="btnEnviar" type="submit" >Agregar Candidato
                 <script>
         const btnEnviar = document.querySelector("#btnEnviar");
         const inputFile = document.querySelector("#inputFile");
