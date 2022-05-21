@@ -2,7 +2,7 @@
     font-family: new times roman;
     font-size: 36px;
     align-items:center;
-    color:mediumblue;
+    color:rgb(56, 56, 136);
 }
 
 #texto {
@@ -18,7 +18,7 @@ body{
 
 
 .tit_vacante{
-    color:red;
+    color:rgb(10, 70, 10);
     font-family: 'Times New Roman', Times, serif;
     font-size: 28px;
     align-items: center;

@@ -75,7 +75,7 @@ if( isset($_POST['submit_data']) ){
                 <td scope="col"><input name="more_attributes" type="text"></td>
             </tr>
             <tr id="texto">
-                <td scope="col"><a class="btn btn-secondary btn-lg active" href="./index.php">Lista de candidatos</a></td>
+                <td scope="col"><a class="btn btn-success" href="./index.php">Lista de Vacantes y Candidatos</a></td>
                 <td scope="col"><button class="btn btn-warning" name="submit_data" onclick="GuardarCandidato();" id="btnEnviar" type="submit" >Agregar Candidato
                 <script>
         const btnEnviar = document.querySelector("#btnEnviar");

@@ -77,8 +77,8 @@ $data = $result->fetchArray();
                 <td><input name="estatus" id="estatus" type="text" value="<?php echo $data['estatus'];?>"></td>
             </tr>
             <tr class="table-info" id="texto">
-                <td><a class="btn btn-outline-primary" href="index.php">Atras</a></td>
-                <td><input class="btn btn-outline-danger" id="btnActualiza" onclick="ActualizarVacante();" name="submit_data" type="submit" value="Editar Vacante"></td>
+                <td><a class="btn btn-outline-primary" href="index.php">Lista de Vacantes</a></td>
+                <td><input type="image" src="https://cdn-icons-png.flaticon.com/512/15/15071.png" width="60" height="60"  id="btnActualiza" onclick="ActualizarVacante();" name="submit_data" type="submit" ></td>
             </tr>
             </form>
         </table>

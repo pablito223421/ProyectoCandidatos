@@ -70,8 +70,8 @@ if( isset($_POST['submit_data']) ){
                 <td><input name="estatus" id="estatus"  type="text"></td>
             </tr>
             <tr class="table-info" id="texto">
-                <td><a href="index.php"><button type="button" class="btn btn-success">Lista de Vacante</button></a></td>
-                <td><input name="submit_data" class="btn btn-info"  onclick="GuardarVacante();"id="btnVacante" type="submit" value="Agregar"></td>
+                <td><a  href="../Vacantes/index.php" class="btn btn-secondary btn-lg active" >Lista de Vacantes</a></td>
+                <td><input  type="image" src="https://i.pinimg.com/originals/9b/08/d1/9b08d1c692141b172e56fa6a53dda7d7.png"  width="60" height="60"  onclick="GuardarVacante();" id="btnVacante" type="submit"></td>
             </tr>
             </form>
         </table>
