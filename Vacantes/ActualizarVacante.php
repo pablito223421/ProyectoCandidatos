@@ -78,10 +78,11 @@ $data = $result->fetchArray();
             </tr>
             <tr class="table-info" id="texto">
                 <td><a class="btn btn-outline-primary" href="index.php">Atras</a></td>
-                <td><input class="btn btn-outline-danger" id="btnGuardarVacante" name="submit_data" type="submit" value="Editar Vacante"></td>
+                <td><input class="btn btn-outline-danger" id="btnActualiza" onclick="ActualizarVacante();" name="submit_data" type="submit" value="Editar Vacante"></td>
             </tr>
             </form>
         </table>
     </div>
+    <script src="../js/JSVacantes/script.js"></script>
 </body>
 </html>

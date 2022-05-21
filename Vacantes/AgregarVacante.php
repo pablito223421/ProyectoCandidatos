@@ -28,7 +28,9 @@ if( isset($_POST['submit_data']) ){
 <head>
     <title>Agregar Vacante</title>
     <link  rel="stylesheet" href="../css/vacante.css">
-    
+        
+    <script src="../js/JSVacantes/script.js"></script>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -38,7 +40,7 @@ if( isset($_POST['submit_data']) ){
 <h1 class="titulo_vac" align="center">Agregar Vacantes disponibles</h1>
     <div style="margin: 20px 100px;">
         <table class="table">
-            <form action="AgregarVacante.php"  method="post">
+            <form action="AgregarVacante.php"  id="frm" method="post">
             <tr class="table-info" id="texto">
                 <td>Nombre de la Vacante</td>
                 <td><input name="nombrevac" id="nombrevac" type="text"></td>
@@ -67,8 +69,9 @@ if( isset($_POST['submit_data']) ){
                 <td>Estatus</td>
                 <td><input name="estatus" id="estatus"  type="text"></td>
             </tr>
+            <tr class="table-info" id="texto">
                 <td><a href="index.php"><button type="button" class="btn btn-success">Lista de Vacante</button></a></td>
-                <td><input name="submit_data" class="btn btn-info" id="btnGuardarVacante" type="submit" value="Agregar"></td>
+                <td><input name="submit_data" class="btn btn-info"  onclick="GuardarVacante();"id="btnVacante" type="submit" value="Agregar"></td>
             </tr>
             </form>
         </table>

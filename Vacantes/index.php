@@ -8,6 +8,7 @@ $result = $db->query($query);
 
 <html>
 <head>
+<script src="../js/JSVacantes/script.js"></script>
 <link  rel="stylesheet" href="../css/vacante.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
@@ -18,7 +19,7 @@ $result = $db->query($query);
 <body>
 <h1 class="titulo_candi" align="center">Lista de Vacantes disponibles</h1>
     <div style=" margin: 20px 100px;">
-            <table class="table">
+            <table class="table" id ="resultado">
             <tr class="table-info" id="texto">
                 <td scope="col">Nombre</td>
                 <td scope="col">Descripción</td>
@@ -39,8 +40,8 @@ $result = $db->query($query);
 				<td scope="col"><?php echo $row['experiencia'];?></td>
                 <td scope="col"><?php echo $row['estatus'];?></td>
                 <td>
-                    <a class="btn btn-secondary" href="ActualizarVacante.php?id=<?php echo $row['id'];?>">Editar Vacante</a> 
-                    <a class="btn btn-danger" id='btnEliminar' class='delete-btn' href="EliminarVacante.php?id=<?php echo $row['id'];?>"  confirm('Desea eliminar esta vacante');">Eliminar Vacante</a>
+                    <a class="btn btn-secondary" id='btnActualizar' href="ActualizarVacante.php?id=<?php echo $row['id'];?>">Editar Vacante</a> 
+                    <a class="btn btn-danger" id='btnEliminar' onclick="EliminarVacante();" class='delete-btn' href="EliminarVacante.php?id=<?php echo $row['id'];?>"  confirm('Desea eliminar esta vacante');">Eliminar Vacante</a>
                     </td>
             </tr>
             <?php } ?>
