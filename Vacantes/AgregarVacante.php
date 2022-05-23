@@ -67,7 +67,11 @@ if( isset($_POST['submit_data']) ){
             </tr>
             <tr class="table-info" id="texto">
                 <td>Estatus</td>
-                <td><input name="estatus" id="estatus"  type="text"></td>
+                <td><select name="estatus" id="estatus"  type="text"">
+                    <option value="Nuevo">Nuevo</option>
+                    <option value="En proceso">En proceso</option>
+                    <option value="Seleccionado">Seleccionado</option>
+                    <option value="Cerrado">Cerrado</option></select></td>
             </tr>
             <tr class="table-info" id="texto">
                 <td><a  href="../Vacantes/index.php" class="btn btn-secondary btn-lg active" >Lista de Vacantes</a></td>

@@ -41,9 +41,6 @@ btnEliminar.addEventListener("click",()=>{
          fetch ("../../Api/Api_Vacantes/ModificarVacante_api.php", {
             method: "POST",
             body:new FormData(frm)
-         }).then(response=> response.text()).then(response=>{
-                ListarVacantes();
-                frm.reset();
          })
         });
         }
