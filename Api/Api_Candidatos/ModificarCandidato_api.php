@@ -5,14 +5,14 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-$db = new SQLite3('C:/xampp/htdocs/proyectocandidatura/BD/base.db');
+$db = new SQLite3('C:\xampp\htdocs\proyectocandidatura\BD\base.db');
 $sentencia = $db->prepare("UPDATE candidato
 	SET nombre = :nombre,
 	fecha_nacimiento = :fecha_nacimiento,
     nacionalidad = :nacionalidad,
 	ciudad_residencia = :ciudad_residencia,
 	cv_file = :cv_file,
-    experiencia = :experiencia
+	more_attributes = :more_attributes
 	WHERE id = :id");
 
 $data = json_decode(file_get_contents('php://input'), true);

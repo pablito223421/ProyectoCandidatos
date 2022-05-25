@@ -17,12 +17,11 @@ $nacionalidad =$data->nacionalidad;
 $ciudad_residencia= $data->ciudad_residencia;
 $cv_file=$data->cv_file;
 $more_attributes=$data->more_attributes;
-$db = new SQLite3('C:/xampp/htdocs/proyectocandidatura/BD/base.db');
-$sentencia = $db->prepare("INSERT INTO candidato (nombre,fecha_nacimiento,nacionalidad,ciudad_residencia,cv_file,more_attributes)
-    VALUES(?, ?, ?, ?, ?, ?)");
+$db = new SQLite3('C:\xampp\htdocs\proyectocandidatura\BD\base.db');
+$sentencia = $db->prepare("INSERT INTO candidato( nombre, fecha_nacimiento, nacionalidad, ciudad_residencia, cv_file, more_attributes) VALUES ( ?, ?, ?, ?, ?, ?)");
+ 
 
-
-$resultado = $sentencia->execute([$nombre,$fecha_nacimiento,$nacionalidad,$ciudad_residencia,$cv_file,$more_attributes]);
+$resultado = $sentencia->execute([ $nombre,$fecha_nacimiento,$nacionalidad, $ciudad_residencia,$cv_file, $more_attributes]);
   
 if($resultado == true){
         echo "El candidato se ha guardado correctamente";

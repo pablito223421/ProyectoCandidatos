@@ -18,7 +18,7 @@ $habtecdes= $data->habtecdes;
 $escolaridad=$data->escolaridad;
 $experiencia=$data->experiencia;
 $estatus = $data->estatus;
-$db = new SQLite3('C:/xampp/htdocs/proyectocandidatura/BD/base.db');
+$db = new SQLite3('C:\xampp\htdocs\proyectocandidatura\BD\base.db');
 $sentencia = $db->prepare("INSERT INTO vacante (nombrevac,descripcion,habtecreq,habtecdes,escolaridad,experiencia,estatus)
     VALUES(?, ?, ?, ?, ?, ?, ?)");
 

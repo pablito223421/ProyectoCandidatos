@@ -9,7 +9,20 @@ $result = $db->query($query);
 <html>
 <head>
 <script src="../js/JSVacantes/script.js"></script>
+
+
 <link  rel="stylesheet" href="../css/vacante.css">
+<link rel="stylesheet" href="../css/styles1.css">
+<link rel="stylesheet" href="../css/materialdesignicons.min.css">
+<link rel="stylesheet" href="../css/dataTables.bootstrap4.css">
+<link rel="stylesheet" href="../css/principal.bundle.base.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+
+
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -25,8 +38,75 @@ $result = $db->query($query);
     <title>Lista de Vacantes</title>
 </head>
 <body>
-<h1 class="titulo_candi" align="center">Lista de Vacantes disponibles</h1>
-    <div style=" margin: 20px 100px;">
+
+<div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="navbar-brand-wrapper d-flex justify-content-center">
+        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
+          <a class="navbar-brand brand-logo" href="./index.php"><img src="../images/logotipo.png" width="40px" height="40px" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="./index.php"><img src="../images/logotipo.png" width="40px" height="40px" alt="logo"/></a>
+        </div>  
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <ul class="navbar-nav mr-lg-4 w-100">
+          <li class="nav-item nav-search d-none d-lg-block w-100">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="search">
+                  <i class="mdi mdi-magnify"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
+            </div>
+          </li>
+        </ul>
+    </nav>
+
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.php">
+              <i class="mdi mdi-home menu-icon"></i>
+              <span class="menu-title">PROYECTO CANDIDATURA</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./AgregarVacante.php">
+            <i class="bi bi-archive"></i>
+              <span class="menu-title">Formulario de Vacantes</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../Candidato/RegistrarCandidatos.php">
+            <i class="bi bi-person"></i>  
+              <span class="menu-title">Formulario de Candidatos</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <i class="bi bi-caret-down-square-fill"></i>  
+            <span class="menu-title">Páginas Disponibles</span>
+            </a>
+            <div class="collapse" id="auth">
+              <ul  class="list-group-item list-group-item-action active">
+              <i class="bi bi-person-lines-fill"></i> <li > <a class="list-group-item" href="./index.php"> Vacantes </a></li>
+              <i class="bi bi-person-plus-fill"></i>  <li > <a class="list-group-item" href="../Candidato/index.php"> Candidatos </a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+
+
+
+         <div class="col-lg-12 stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="tit_vacante" align="center">Lista de Vacantes</h4>
+                  <div class="table-responsive pt-3">
+                  <div style=" margin: 20px 100px;">
             <table class="table" id ="resultado">
             <tr class="table-info" id="texto">
                 <td scope="col">Nombre</td>
@@ -60,5 +140,8 @@ $result = $db->query($query);
     <div class="d-flex justify-content-center">
     <a  href="AgregarVacante.php" ><input type="image" src="https://cdn-icons-png.flaticon.com/512/5219/5219822.png" name="submit" width="60" height="60" alt="submit"data-toggle="modal" data-target="#agregavac"/></a>
     </div>
+    </div>
+              </div>
+         </div>
 </body>
 </html>
