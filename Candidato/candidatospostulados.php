@@ -3,11 +3,16 @@
 include '../conn.php';
 
 
-$query = "SELECT * FROM vacante";
+$query = "SELECT candidato.nombre,candidato.apellidos,candidato.habilidades_técnicas,vacante.nombrevac,vacante.estatus FROM candidato,vacante
+WHERE (nombre = 'Luis Manuel' AND nombrevac = 'Chef de cocina')
+OR  (nombre = 'Michael Stuart' AND  nombrevac = 'Contador')
+OR   (nombre = 'Alfonso' AND nombrevac = 'Mesero')
+OR   (nombre = 'Franco Manuel' AND  nombrevac = 'Desarrollador')
+OR   (nombre = 'Brandon' AND  nombrevac = 'Lider de Proyectos')
+OR  (nombre = 'José Luna' AND  nombrevac = 'Piloto de Carreras')";
 $result = $db->query($query);
 
-$query1 = "SELECT * FROM candidato";
-$result1 = $db->query($query1);
+
 ?>
 
 
@@ -18,7 +23,7 @@ $result1 = $db->query($query1);
     <title>Lista de Vacantes</title>
     <script src="../js/JSVacantes/script2.js"></script>
 
-    <link  rel="stylesheet" href="../css/candidato.css">
+<link  rel="stylesheet" href="../css/candidato.css">
 <link rel="stylesheet" href="../css/styles1.css">
 <link rel="stylesheet" href="../css/materialdesignicons.min.css">
 <link rel="stylesheet" href="../css/dataTables.bootstrap4.css">
@@ -109,40 +114,8 @@ $result1 = $db->query($query1);
         </ul>
       </nav>
 
-<h1 class="titulo_candi" align="center">Lista de vacantes y candidatos disponibles</h1>
-<p class="tit_vacante" align="center"> Vacantes Disponibles</p>
-<div class="col-lg-12 stretch-card">
-              <div class="card">
-                <div class="card-body">
-        <table class="table table-sm table-info" >
-        <thead>
-               <tr id="texto">
-                <td scope="col">Nombre</td>
-                <td scope="col">Descripción</td>
-				<td scope="col">Habilidades técnicas requeridas</td>
-				<td scope="col">Habilidades técnicas deseables</td>
-				<td scope="col">Escolaridad</td>
-				<td scope="col">Tiempo de Experiencia</td>
-				<td scope="col">Estatus</td>
-                </tr>
-               </thead>
-            <?php while($row = $result->fetchArray()) {?>
-            <tr id="texto" id="load-table">
-                <td scope="col"><?php echo $row['nombrevac'];?></td>
-                <td scope="col"><?php echo $row['descripcion'];?></td>
-				<td scope="col"><?php echo $row['habtecreq'];?></td>
-                <td scope="col"><?php echo $row['habtecdes'];?></td>
-				<td scope="col"><?php echo $row['escolaridad'];?></td>
-				<td scope="col"><?php echo $row['experiencia'];?></td>
-                <td scope="col"><?php echo $row['estatus'];?></td>
-            </tr>
-            <?php } ?>
-        </table>
-        </div>
-              </div>
-</div>
-            </div>
-        <p class="tit_vacante" align="center"> Lista de Candidatos</p>
+<h1 class="titulo_candi" align="center">Lista de candidatos postulados</h1>
+
         <div class="col-lg-12 stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -151,26 +124,18 @@ $result1 = $db->query($query1);
                <tr id="texto">
                 <td scope="col">Nombre</td>
                 <td scope="col">Apellidos</td>
-                <td scope="col">Telefono</td>
-                <td scope="col">Celular</td>
-                <td scope="col">Fecha de Nacimiento</td>
-                <td scope="col">Estado</td>
-                <td scope="col">Nacionalidad</td>
-				<td scope="col">Ciudad de Residencia</td>
-				<td scope="col">Experiencia</td>
+                <td scope="col">Habilidades Técnicas</td>
+                <td scope="col">Nombre de la Vacante</td>
+                <td scope="col">Estatus</td>
                 </tr>
                </thead>
-            <?php while($row = $result1->fetchArray()) {?>
+            <?php while($row = $result->fetchArray()) {?>
             <tr id="texto">
                 <td scope="col"><?php echo $row['nombre'];?></td>
                 <td scope="col"><?php echo $row['apellidos'];?></td>
-                <td scope="col"><?php echo $row['telefono'];?></td>
-                <td scope="col"><?php echo $row['celular'];?></td>
-                <td scope="col"><?php echo $row['fecha_nacimiento'];?></td>
-                <td scope="col"><?php echo $row['estado'];?></td>
-				        <td scope="col"><?php echo $row['nacionalidad'];?></td>
-                <td scope="col"><?php echo $row['ciudad_residencia'];?></td>
-				        <td scope="col"><?php echo $row['experiencia'];?></td>
+                <td scope="col"><?php echo $row['habilidades_técnicas'];?></td>
+                <td scope="col"><?php echo $row['nombrevac'];?></td>
+                <td scope="col"><?php echo $row['estatus'];?></td>
             </tr>
             <?php } ?>
         </table>
@@ -178,8 +143,8 @@ $result1 = $db->query($query1);
               </div>
         </div>
         <div class="d-flex justify-content-center">
-        <a  href="RegistrarCandidatos.php">
-        <input type="image" src="https://cdn-icons-png.flaticon.com/512/48/48744.png" name="submit" width="60" height="60" alt="submit"data-toggle="modal" data-target="#agregacan"/>
+        <a  href="../Candidato/index.php">
+        <input type="image" src="https://thumbs.dreamstime.com/z/icono-transparente-del-candidato-dise%C3%B1o-s%C3%ADmbolo-de-r-humano-130312471.jpg" name="submit" width="60" height="60" alt="submit"data-toggle="modal" data-target="#indexcan"/>
         </a>
         </div>
 

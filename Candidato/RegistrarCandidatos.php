@@ -4,17 +4,21 @@ $message = '';
 
 include '../conn.php';
 
+
 if( isset($_POST['submit_data']) ){
+$nombre= $_POST['nombre'];
+$apellidos= $_POST['apellidos'];
+$telefono= $_POST['telefono'];
+$celular= $_POST['celular'];
+$fecha_nacimiento =$_POST['fecha_nacimiento'];
+$estado =$_POST['estado'];
+$nacionalidad =$_POST['nacionalidad'];
+$ciudad_residencia= $_POST['ciudad_residencia'];
+$experiencia=$_POST['experiencia'];
+$correo=$data->$_POST['correo'];
+$contrasena=$data->$_POST['contrasena'];
 
-    
-    $nombre = $_POST['nombre'];
-    $fecha_nacimiento = $_POST['fecha_nacimiento'];
-	$nacionalidad = $_POST['nacionalidad'];
-    $ciudad_residencia = $_POST['ciudad_residencia'];
-    $cv_file= $_POST['cv_file'];
-    $more_attributes= $_POST['more_attributes'];
-
-    $query = "INSERT INTO candidato ( nombre, fecha_nacimiento, nacionalidad, ciudad_residencia, cv_file, more_attributes ) VALUES ('$nombre', '$fecha_nacimiento', '$nacionalidad', '$ciudad_residencia', '$cv_file', '$more_attributes')";
+    $query = "INSERT INTO candidato ( nombre, apellidos,telefono,celular, fecha_nacimiento,estado, nacionalidad, ciudad_residencia, experiencia, correo, contrasena ) VALUES ( '$nombre', '$apellidos' , '$telefono','$celular', '$fecha_nacimiento' , '$estado', '$nacionalidad', '$ciudad_residencia' , '$experiencia', '$correo', '$contrasena')";
 
     if( $db->exec($query) ){
 
@@ -146,8 +150,24 @@ if( isset($_POST['submit_data']) ){
                 <td scope="col"><input name="nombre" type="text"></td>
             </tr>
             <tr id="texto">
+                <td scope="col">Apellido del candidato</td>
+                <td scope="col"><input name="apellido" type="text"></td>
+            </tr>
+            <tr id="texto">
+                <td scope="col">Telefono</td>
+                <td scope="col"><input name="telefono" type="number"></td>
+            </tr>
+            <tr id="texto">
+                <td scope="col">Celular</td>
+                <td scope="col"><input name="celular" type="number"></td>
+            </tr>
+            <tr id="texto">
                 <td scope="col">Fecha de Nacimiento</td>
                 <td scope="col"><input name="fecha_nacimiento" type="date"></td>
+            </tr>
+            <tr id="texto">
+                <td scope="col">Estado</td>
+                <td scope="col"><input name="estado" type="text"></td>
             </tr>
 			<tr id="texto">
                 <td scope="col">Nacionalidad</td>
@@ -164,11 +184,19 @@ if( isset($_POST['submit_data']) ){
 </td>
             </tr>
 			<tr id="texto">
-                <td scope="col">Atributos</td>
-                <td scope="col"><input name="more_attributes" type="text"></td>
+                <td scope="col">Experiencia</td>
+                <td scope="col"><input name="experiencia" type="text"></td>
             </tr>
             <tr id="texto">
-                <td scope="col"><a class="btn btn-success" href="./index.php">Lista de Vacantes y Candidatos</a></td>
+                <td scope="col">Correo</td>
+                <td scope="col"><input name="correo" type="mail"></td>
+            </tr>
+            <tr id="texto">
+                <td scope="col">Contraseña</td>
+                <td scope="col"><input name="experiencia" type="password"></td>
+            </tr>
+            <tr id="texto">
+                <td scope="col"><a class="btn btn-success" href="../Candidato/candidatospostulados.php">Candidatos Postulados</a></td>
                 <td scope="col"><button class="btn btn-warning" name="submit_data" onclick="GuardarCandidato();" id="btnEnviar" type="submit" >Agregar Candidato
                 <script>
         const btnEnviar = document.querySelector("#btnEnviar");

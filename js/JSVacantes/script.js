@@ -23,13 +23,18 @@ btnVacante.addEventListener("click",()=>{
 }
 
 function EliminarVacante(){
-    alert('La vacante ha sido eliminada');
+let text= "Estas seguro de eliminar la vacante";
+if(confirm(text)==true){
 btnEliminar.addEventListener("click",()=>{
             fetch ("../../Api/Api_Vacantes/EliminarVacante_api.php", {
                 method: "POST",
                 body:id
              })
         });
+    return true;
+    }else{
+        return false;
+    }
     }
 
 

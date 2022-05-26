@@ -12,16 +12,21 @@ if (!$data) {
     exit;
 }
 $nombre= $data->nombre;
-$fecha_nacimiento = $data->fecha_nacimiento;
+$apellidos= $data->apellidos;
+$telefono= $data->telefono;
+$celular= $data->celular;
+$fecha_nacimiento =$data->fecha_nacimiento;
+$estado =$data->estado;
 $nacionalidad =$data->nacionalidad;
 $ciudad_residencia= $data->ciudad_residencia;
-$cv_file=$data->cv_file;
-$more_attributes=$data->more_attributes;
+$experiencia=$data->experiencia;
+$correo=$data->correo;
+$contrasena=$data->contrasena;
 $db = new SQLite3('C:\xampp\htdocs\proyectocandidatura\BD\base.db');
-$sentencia = $db->prepare("INSERT INTO candidato( nombre, fecha_nacimiento, nacionalidad, ciudad_residencia, cv_file, more_attributes) VALUES ( ?, ?, ?, ?, ?, ?)");
+$sentencia = $db->prepare("INSERT INTO candidato( nombre,apellidos, telefono, celular,fecha_nacimiento,estado,nacionalidad, ciudad_residencia, experiencia, correo, contrasena) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
  
 
-$resultado = $sentencia->execute([ $nombre,$fecha_nacimiento,$nacionalidad, $ciudad_residencia,$cv_file, $more_attributes]);
+$resultado = $sentencia->execute([ $nombre,$apellidos,$telefono,$celular,$fecha_nacimiento,$estado,$nacionalidad, $ciudad_residencia, $experiencia, $correo, $contrasena]);
   
 if($resultado == true){
         echo "El candidato se ha guardado correctamente";
